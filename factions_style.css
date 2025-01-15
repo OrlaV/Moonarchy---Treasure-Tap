@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Empêche l’affichage d’une barre de scroll */
+  overflow: hidden;
+  /* Force la page à occuper toute la hauteur de la fenêtre */
+  height: 100vh;
+}
+
+body {
+  font-family: "Inria Sans", serif;
+  font-weight: 300;
+  background: linear-gradient(180deg, rgba(56,25,105,1) 0%, rgba(32,12,62,1) 100%);
+  background-color: rgb(56,25,105);
+  color: #333;
+  /* Pour occuper tout l’écran (mobile) */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+.container {
+  width: 100%;
+  max-width: 500px; /* Largeur max pour desktop */
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* 3) Conteneur des factions */
+.factions-container {
+  display: flex;               /* Mise en page en flexbox */
+  justify-content: space-between;
+  width: 90%;
+  max-width: 600px;  
+  margin: 0 auto;              /* Centrer horizontalement */
+  /* gap: 20px; éventuellement si pris en charge par votre navigateur */
+}
+
+/* 4) Wrapper pour chaque faction */
+.factions-wrapper {
+  flex: 1;
+  margin: 0 5px; /* Espace horizontal (si gap non utilisé) */
+  cursor: pointer;  /* Pour indiquer que c’est cliquable */
+  transition: transform 0.2s ease; /* animation visuelle si besoin */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 5) Image responsive */
+.factions-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+
+}
+
+/* 6) État "sélectionné" */
+.factions-wrapper.selected {
+  /* Par exemple un contour visible */
+ 
+  outline-offset: -3px;
+  
+  /* Ou un effet de zoom plus important */
+  transform: scale(1.08);
+  
+}
+
+/* Le texte ne sera pas agrandi */
+.faction-title {
+  margin-top: 0.5rem;
+  color: #D29EFF;
+  text-align: center;
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+}
+
+.factions-text-container {
+  width: 100%;
+  max-width: 600px;   /* Aligner avec votre max-width si souhaité */
+  margin: 1rem auto 0 auto;
+  text-align: center;
+  /* Option 1 : hauteur fixe */
+  /* height: 100px; */
+
+  /* Option 2 : hauteur minimale (préférable si vous n’êtes pas sûr du texte) */
+  min-height: 100px;
+
+  display: flex;        /* pour centrer verticalement si on veut */
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.description-text {
+  font-family: "Inria Sans", serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #974DD8;          /* Ou #D29EFF, selon vos goûts */
+}
+
+/* ========== BOUTON ========== */
+#nextPageButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+  background-color: #E61791;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Bouton désactivé */
+#nextPageButton[disabled] {
+  background-color: #381968;  /* Un violet plus sombre */
+  color: #D29EFF;            /* Couleur texte plus pâle */
+  cursor: not-allowed;
+  opacity: 1;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+  <head>
+    
+  </head>
+  <body>
+
+    <header class="logo-container">
+      <div class="header-left">
+        <p class="gem-counter">
+          <span class="gemCount" id="gemCount">0</span> 
+          <br />
+          GEMS
+        </p>
+      </div>
+    
+      <div class="header-center">
+        <img src="img/logo.png" alt="Logo" class="logo">
+      </div>
+    
+      <div class="header-right">
+        <p class="leaderboard_counter">
+          <span class="leaderboardcounter" id="leaderboardcount">0</span> 
+          <br />
+          Leaderboard
+        </p>
+      </div>
+    </header>
+    
+    
+    <main class="main-container">
+    <div class="container">
+      <canvas id="particleCanvas"></canvas>
+      <div class="numberstats_counter">
+
+        <p class="tap-counter">
+          <span class="tapcounter" id="tapCount">20</span>
+        </p>
+
+      </div>
+      <div class="numberstats">
+
+        
+        <p class="tap-session-counter">
+          <span class="tapsessioncount" id="sessionTapCount">0</span>
+          </br>
+          Current game taps 
+        </p>
+        <p class="tap-daily-counter">
+           <span class="tapdailycount" id="dailyTapCount">500</span>/500
+          </br>
+          Daily taps limit
+        </p>
+        
+       </div>
+
+      <div class="big-circle" id="tapCircle">
+        <img 
+          id="circleImage" 
+          src="img/Chest/1/Chest1_1.png" 
+          alt="Mon image à l'intérieur du cercle"
+        >
+
+        
+      </div>
+       
+      
+
+    <div class="boosts-container">
+      <div class="boost-circle">
+        <img src="img/Boosts/B_ph1.png" alt="Boost 1" class="boost-image">
+      </div>
+      <div class="boost-circle">
+        <img src="img/Boosts/B_ph1.png" alt="Boost 2" class="boost-image">
+      </div>
+      <div class="boost-circle">
+        <img src="img/Boosts/B_ph1.png" alt="Boost 3" class="boost-image">
+      </div>
+      <div class="boost-circle">
+        <img src="img/Boosts/B_ph1.png" alt="Boost 4" class="boost-image">
+      </div>
+    </div>
+    
+
+    </div>
+  </main>
+
+    
+
+    <nav class="navbar">
+      <a href="profile.html" class="nav-item" data-default-src="img/navbar/Icon2_bw.png" data-active-src="img/navbar/Icon2_color.png">
+        <img src="img/navbar/Icon2_bw.png" alt="Profile">
+      </a>
+      <a href="leaderboard.html" class="nav-item" data-default-src="img/navbar/Icon3_bw.png" data-active-src="img/navbar/Icon3_color.png">
+        <img src="img/navbar/Icon3_bw.png" alt="Leaderboard">
+      </a>
+      <a href="tap.html" class="nav-item active" data-default-src="img/navbar/Icon1_bw.png" data-active-src="img/navbar/Icon1_color.png">
+        <img src="img/navbar/Icon1_color.png" alt="Tap">
+      </a>
+      <a href="boosts.html" class="nav-item" data-default-src="img/navbar/Icon4_bw.png" data-active-src="img/navbar/Icon4_color.png">
+        <img src="img/navbar/Icon4_bw.png" alt="Boosts">
+      </a>
+    </nav>
+  
+    <script src="tap_script.js"></script>
+    <script src="boost-manager.js"></script>
+    <script src="header.js"></script>
+    <script src="navbar.js"></script>
+    <script>
+        // Récupérer la faction
+        const faction = localStorage.getItem('faction'); 
+        if (faction === 'azurians') {
+          // Appliquer un style Azurians (ex: body.classList.add('theme-azurians'))
+          document.body.classList.add('theme-azurians');
+        } else if (faction === 'crimsons') {
+          // Appliquer un style Crimsons
+          document.body.classList.add('theme-crimsons');
+        }
+      </script>
+
+  </body>
+
+
+</html>

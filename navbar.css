@@ -1,0 +1,78 @@
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    bottom: 30px; /* Espace entre le bas de l'écran et la navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Prend 90% de la largeur de l'écran */
+    max-width: 350px; /* Même max-width que le container pour l'harmonie */
+    background: linear-gradient(180deg, #7031CE, #381968);
+    border-radius: 50px; /* Bords arrondis */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
+    border-width: 10px;
+    border-color: #fff;
+    z-index: 100; /* Assure que la navbar est au-dessus des autres éléments */
+    -webkit-tap-highlight-color: transparent;
+    height: 80px;
+  }
+  
+  /* Styles des éléments de la Navbar */
+  .navbar .nav-item {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fond semi-transparent pour chaque icône */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
+    border-radius: 35px; /* Bords arrondis pour chaque cadre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    
+  }
+  
+  /* Effet au survol ou au clic (pour desktop et mobile via active state) */
+  .navbar .nav-item:hover,
+  .navbar .nav-item:active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Styles des images des icônes */
+  .navbar .nav-item img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s;
+  }
+  
+/* Style pour l'icône active */
+.navbar .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.4); /* Fond plus clair */
+  }
+  
+  .navbar .nav-item.active img {
+    transform: scale(1.1); /* Légère augmentation de la taille de l'icône active */
+  }
+  
+
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .navbar {
+      width: 95%;
+      padding: 8px 0;
+    }
+    
+    .navbar .nav-item {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .navbar .nav-item img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  

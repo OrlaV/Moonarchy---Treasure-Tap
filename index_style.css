@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Empêche l’affichage d’une barre de scroll */
+  overflow: hidden;
+  /* Force la page à occuper toute la hauteur de la fenêtre */
+  height: 100vh;
+}
+
+body {
+  font-family: "Inria Sans", serif;
+  font-weight: 300;
+  background-color: #200c3e;
+  color: #333;
+  /* Pour occuper tout l’écran (mobile) */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+
+.container {
+  width: 100%;
+  max-width: 500px; /* Largeur max pour desktop */
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+  color: #fff;
+}
+
