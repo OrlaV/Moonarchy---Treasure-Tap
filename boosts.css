@@ -1,0 +1,74 @@
+.boosts-grid {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer les cartes et équilibrer les espaces */
+    justify-items: center; /* Centre horizontalement chaque carte */
+    
+  }
+  
+  
+
+
+  .boost-card {
+    background: #381968;
+    border: 3px solid #974DD8;
+    border-radius: 30px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 110px;
+    max-width: 90%;
+    position: relative;
+  }
+  
+  .boost-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+  }
+  
+  .boost-info {
+    flex: 1;
+    padding-right: 60px;
+    color: white;
+  }
+  
+  
+  .boost-info h3 {
+
+  }
+  
+  .boost-info p {
+    font-size: 0.9rem;
+    color: #D29EFF;
+    margin: 0.25rem 0;
+    
+  }
+  
+  .boost-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #E61791;
+    border: 3px solid #974DD8;
+    color: white;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .boost-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+
+  

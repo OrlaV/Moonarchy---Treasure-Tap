@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  font-family: "Inria Sans", serif;
+}
+
+body {
+  font-family: "Inria Sans", serif;
+  font-weight: 300;
+  background: linear-gradient(180deg, rgba(56,25,105,1) 0%, rgba(32,12,62,1) 100%);
+  background-color: rgb(56,25,105);
+  color: #333;
+  /* Pour occuper tout l’écran (mobile) */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Empile les enfants verticalement */
+  justify-content: flex-start; /* Aligne les enfants en haut */
+ 
+  
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre verticalement les enfants dans ce conteneur */
+  align-items: center; /* Centre horizontalement les enfants */
+  flex-grow: 1; /* Prend tout l'espace disponible verticalement */
+}
+
+.container {
+  width: 100%;
+  max-width: 500px; /* Largeur max pour desktop */
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  position: relative; 
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: "Inria Sans", serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.big-circle {
+  
+  width: 75vmin;
+  height: 75vmin;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #6F32CE 0%,
+    #381968 50%,
+    #200C3E 70%,
+    #200C3E 100%
+  );
+
+  /* Pour positionner l'image en absolu dans ce cercle */
+  position: relative;
+  margin: 0 auto;
+  outline: 10px solid;
+  cursor: pointer; /* Indique que c'est cliquable */
+  -webkit-tap-highlight-color: transparent;
+  
+}
+
+
+.theme-azurians .big-circle {
+  box-shadow: 0 0 70px 30px rgba(30, 94, 240, 0.5);
+  outline-color: rgba(30, 94, 240, 0.2);
+}
+
+.theme-crimsons .big-circle {
+  box-shadow: 0 0 70px 30px rgba(255, 58, 58, 0.5);
+  outline-color: rgba(255, 58, 58, 0.2);
+}
+
+
+.big-circle img {
+  /* on place l'image en absolu au centre du cercle */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Elle prendra par exemple 50% de la largeur du cercle */
+  width: 110%;
+  height: auto;
+
+  /* Pour un affichage net sur fonds sombres */
+  /* background: rgba(255,255,255,0.1);  optionnel */
+  /* border-radius: 50%; si vous souhaitez l'image elle-même en cercle */
+}
+
+/* Le compteur */
+.numberstats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #D29EFF;
+margin-bottom: 30px;
+  z-index: 10;
+  gap: 20px;
+}
+
+.numberstats_counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #D29EFF;
+margin-bottom: 10px;
+  z-index: 10;
+  gap: 20px;
+}
+
+
+
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permet de cliquer à travers le canvas */
+  z-index: 1000; /* Assure que les particules sont au-dessus du coffre */
+}
+
+.gem-counter span {
+  display: inline-block;
+  width: 4ch; /* Réserve de l'espace pour 4 caractères */
+  text-align: right;
+}
+
+
+.gem-counter {
+  color: #D29EFF;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2; /* Assure un bon espacement vertical */
+}
+
+.gemCount {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.tap-daily-counter{
+  color: #D29EFF; 
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.tapdailycount {
+  color: #fff; 
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.tap-session-counter {
+  color: #D29EFF; 
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.tapsessioncount {
+  color: #fff; 
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+.tapcounter {
+  color: #fff; 
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+
+.leaderboard_counter {
+  color: #D29EFF;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2; /* Assure un bon espacement vertical */
+  
+}
+
+.leaderboardcounter {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+
+/* Conteneur des boosts */
+.boosts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espace entre chaque cercle */
+  margin-top: 30px;
+}
+
+/* Style des petits cercles */
+.boost-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Images à l'intérieur des cercles */
+.boost-image {
+  width: 100%; /* Ajustez selon vos besoins */
+  height: auto;
+  border-radius: 50%; /* Pour une apparence circulaire */
+  z-index: 10;
+}
+
+
+
+
+/* Conteneur du logo */
+.logo-container {
+  display: flex;
+  justify-content: space-between; /* Éléments gauche, centre, droite */
+  align-items: center; /* Alignement vertical */
+  padding: 0 20px; /* Espacement horizontal */
+  width: 100%; /* Occupe toute la largeur */
+  position: fixed; /* Fixe le header en haut */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box; /* Inclure les marges et les paddings dans la taille */
+  height: 70px; /* Hauteur fixe pour éviter les déplacements */
+  margin-top: 10px;
+}
+
+/* Style du logo */
+/* Logo */
+.logo {
+  max-width: 60px; /* Largeur maximale du logo */
+  height: auto;
+}
+
+
+/* Section gauche */
+.header-left {
+  flex: 1; /* Occupe l'espace disponible à gauche */
+  text-align: center; /* Alignement à gauche */
+}
+
+/* Section centrale */
+.header-center {
+  flex: 1; /* Occupation égale de l'espace */
+  display: flex;
+  justify-content: center; /* Centre le logo horizontalement */
+}
+
+/* Section droite */
+.header-right {
+  flex: 1; /* Occupe l'espace disponible à droite */
+  text-align: center; /* Alignement à droite */
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="boosts.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+  <head>
+    
+  </head>
+  <body>
+
+    <header class="logo-container">
+      <div class="header-left">
+        <p class="gem-counter">
+          <span class="gemCount" id="gemCount">0</span> 
+          <br />
+          GEMS
+        </p>
+      </div>
+    
+      <div class="header-center">
+        <img src="img/logo.png" alt="Logo" class="logo">
+      </div>
+    
+      <div class="header-right">
+        <p class="leaderboard_counter">
+          <span class="leaderboardcounter" id="leaderboardcount">0</span> 
+          <br />
+          Leaderboard
+        </p>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <div class="boosts-grid">
+        <div class="boost-card" data-boost="potion">
+          <img src="img/Boosts/Potion.png" alt="Potion" class="boost-image">
+          <div class="boost-info">
+            <h3>POTION</h3>
+            <p>PASSIVE TAPS</p>
+            <p>Get passive taps, a small
+              boost that help when you’re
+              lazy.</p>
+            <button class="boost-button" data-price="0.001">+</button>
+          </div>
+        </div>
+        
+        <div class="boost-card" data-boost="sword">
+          <img src="img/Boosts/Sword.png" alt="Sword" class="boost-image">
+          <div class="boost-info">
+            <h3>SWORD</h3>
+            <p>MORE TAPS</p>
+            <p>Get 3x more taps when you
+              tap. Don’t worry it doesn’t
+              hurt. That’s cool isn’t it?</p>
+            <button class="boost-button" data-price="0.002">+</button>
+          </div>
+        </div>
+        
+        <div class="boost-card" data-boost="bag">
+          <img src="img/Boosts/Bag.png" alt="Bag" class="boost-image">
+          <div class="boost-info">
+            <h3>BAG</h3>
+            <p>MORE GEMS</p>
+            <p>Get 2x more gems when you
+              tap. Our king will no longer 
+              have a penny.</p>
+            <button class="boost-button" data-price="0.003">+</button>
+          </div>
+        </div>
+        
+        <div class="boost-card" data-boost="book">
+          <img src="img/Boosts/Book.png" alt="Book" class="boost-image">
+          <div class="boost-info">
+            <h3>BOOK</h3>
+            <p>MORE DAILY TAPS</p>
+            <p>Get 2x more taps per day. Your finger will be as
+              smooth as our king’s head</p>
+            <button class="boost-button" data-price="0.004">+</button>
+          </div>
+        </div>
+      </div>
+    </main>
+      
+
+    </div>
+
+    <nav class="navbar">
+      <a href="profile.html" class="nav-item" data-default-src="img/navbar/Icon2_bw.png" data-active-src="img/navbar/Icon2_color.png">
+        <img src="img/navbar/Icon2_bw.png" alt="Profile">
+      </a>
+      <a href="leaderboard.html" class="nav-item" data-default-src="img/navbar/Icon3_bw.png" data-active-src="img/navbar/Icon3_color.png">
+        <img src="img/navbar/Icon3_bw.png" alt="Leaderboard">
+      </a>
+      <a href="tap.html" class="nav-item" data-default-src="img/navbar/Icon1_bw.png" data-active-src="img/navbar/Icon1_color.png">
+        <img src="img/navbar/Icon1_bw.png" alt="Tap">
+      </a>
+      <a href="boosts.html" class="nav-item active" data-default-src="img/navbar/Icon4_bw.png" data-active-src="img/navbar/Icon4_color.png">
+        <img src="img/navbar/Icon4_color.png" alt="Boosts">
+      </a>
+    </nav>
+  
+    <script type="module" src="js/app.js"></script>
+    <script src="navbar.js"></script>
+
+
+    
+    
+  </body>
+
+
+</html>
