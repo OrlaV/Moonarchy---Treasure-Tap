@@ -97,7 +97,7 @@ export class ParticleSystem {
     draw(ctx) {
       ctx.save();
       ctx.translate(this.x, this.y);
-      ctx.rotate(this.angle * Math.PI / 180);
+      ctx.rotate(this.angle * Math.PI / 0);
       ctx.drawImage(
         this.image, 
         -this.size / 2, 

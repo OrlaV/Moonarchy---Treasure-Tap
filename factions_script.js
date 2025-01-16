@@ -11,6 +11,14 @@ const defaultText = "The two moons of Selenor, Azura and Crimara, have split the
 const textAzurians = "Guided by the serene light of Azura, the Azurians excel in wisdom and strategy. Masters of foresight and diplomacy, they preserve harmony with clever plans and calculated moves.";
 const textCrimsons = "Born under the fiery glow of Crimara, the Crimsons thrive on courage and strength. Bold and unyielding, they charge into battle, driven to conquer and protect through sheer force.";
 
+document.addEventListener('DOMContentLoaded', () => {
+  const faction = localStorage.getItem('faction');
+  if (faction) {
+    window.location.href = 'tap.html';
+  }
+});
+
+
 // 4) Fonction pour mettre à jour la description
 function updateDescription(faction) {
   if (faction === null) {
@@ -34,6 +42,15 @@ function updateButtonState() {
     nextPageButton.disabled = false;
   }
 }
+
+
+nextPageButton.addEventListener('click', () => {
+  // Vérifier qu'une faction est sélectionnée
+  if (localStorage.getItem('faction')) {
+    window.location.href = 'tap.html';
+  }
+});
+
 
 // 6) Gestion des clics sur les factions
 factionWrappers.forEach((wrapper) => {

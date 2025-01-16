@@ -13,6 +13,12 @@
     
   </head>
   <body>
+    <script>
+      // Vérifier si une faction est sélectionnée
+      if (!localStorage.getItem('faction')) {
+        window.location.href = 'factions.html';
+      }
+    </script>
 
     <header class="logo-container">
       <div class="header-left">

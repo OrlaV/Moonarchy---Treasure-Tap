@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="index_style.css">
-  
-  <!-- Redirection après 5 secondes -->
-  <meta http-equiv="refresh" content="3; url=factions.html">
+  <script>
+    // Vérifier si une faction est déjà sélectionnée
+    document.addEventListener('DOMContentLoaded', () => {
+      const faction = localStorage.getItem('faction');
+      if (faction) {
+        setTimeout(() => {
+        window.location.href = 'tap.html';
+      }, 3000);
+      } else {
+        // Redirection vers la page de sélection de faction après 3 secondes
+        setTimeout(() => {
+          window.location.href = 'factions.html';
+        }, 3000);
+      }
+    });
+  </script>
 </head>
 <body>
- 
   <div class="container">
-    <img src="img/logo.png" >
-
-
+    <img src="img/logo.png">
   </div>
-
-
 </body>
 </html>

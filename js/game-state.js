@@ -84,15 +84,27 @@ class GameState {
 
     saveState() {
         try {
-            localStorage.setItem('tapGameData', JSON.stringify({
+            const state = {
                 tapsLeft: this.tapsLeft,
                 sessionTapCount: this.sessionTapCount,
                 lastRegenTime: this.lastRegenTime,
-                totalGems: this.totalGems
-            }));
+                totalGems: this.totalGems,
+                lastSaveTime: Date.now()
+            };
+    
+            localStorage.setItem('tapGameData', JSON.stringify(state));
+            
+            // Backup de sauvegarde
+            localStorage.setItem('tapGameData_backup', JSON.stringify(state));
+            
             this.updateUI();
         } catch (error) {
             console.error('Error saving game state:', error);
+            // Restaurer depuis la backup si la sauvegarde échoue
+            const backup = localStorage.getItem('tapGameData_backup');
+            if (backup) {
+                localStorage.setItem('tapGameData', backup);
+            }
         }
     }
 
